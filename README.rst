@@ -73,9 +73,7 @@ polyfill for:
 * The early CPython 3 versions that shipped without ``callable`` before
   it was added back in in CPython 3.2. There we can reimplement it using
   ``ctypes``, and polyfill it into the global namespace by using
-  ``builtins`` (this, by the way, is a perfect example of why having the
-  flexibility to inject names into the language environment in a truly
-  global way is a good thing).
+  ``builtins``.
 
 If there are other Python implementation versions where it would be
 possible to support a polyfill, they might eventually be added here.
