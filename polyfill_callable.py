@@ -37,6 +37,7 @@ except ImportError:
         # Some implementations of Python don't expose builtins. On
         # those, we can just fall through to the final check.
         class _FakeBuiltins(object):
+            # pylint: disable=bad-option-value,useless-object-inheritance
             # pylint: disable=too-few-public-methods
             callable = None
         builtins = _FakeBuiltins()
