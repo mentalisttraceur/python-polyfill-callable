@@ -3,26 +3,15 @@ Python ``callable`` polyfill
 
 Attempts to ensure the ``callable`` builtin is available.
 
-Most Python versions have a native builtin function called ``callable``
-which checks if the argument is a callable object.
-
-This applies to all modern supported versions of CPython (including
-stackless), PyPy, Jython, IronPython, MicroPython, PyPy.js, Brython,
-and probably others, but there is a small handful of Python versions
-where ``callable`` isn't implemented.
-
-The concept behind this module is that it attempts to ensure that the
-``callable`` builtin is available:
-
 * On versions of Python where ``callable`` is already available,
   importing this doesn't break anything and leaves ``callable`` alone.
 
 * On versions without a ``callable`` builtin, on import this will
-  attempt to inject an equivalent implementation, so that code invoking
-  ``callable`` continues to work.
+  attempt to inject an equivalent implementation, so that code
+  invoking ``callable`` continues to work.
 
-* If your Python runtime has no ``callable`` builtin and this code is
-  unable to polyfill it, it will raise a ``NotImplementedError``.
+* If your Python runtime has no ``callable`` builtin and this module
+  is unable to polyfill it, it will raise a ``NotImplementedError``.
 
 
 Versioning
@@ -30,9 +19,6 @@ Versioning
 
 This library's version numbers follow the `SemVer 2.0.0 specification
 <https://semver.org/spec/v2.0.0.html>`_.
-
-The current version number is available in the variable ``__version__``
-as is normal for Python modules.
 
 
 Installation
