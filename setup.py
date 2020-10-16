@@ -20,7 +20,7 @@ finally:
 
 setup(
     name='polyfill-callable',
-    version=__version__ + '.post2',
+    version=__version__,
     description=__doc__.split('\n')[0],
     long_description=long_description,
     license='0BSD',
