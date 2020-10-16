@@ -36,15 +36,16 @@ except ImportError:
     except ImportError:
         # Some implementations of Python don't expose builtins. On
         # those, we can just fall through to the final check.
-        class FakeBuiltins(object):
-            # pylint: disable=missing-docstring,too-few-public-methods
+        class _FakeBuiltins(object):
+            # pylint: disable=too-few-public-methods
             callable = None
-        builtins = FakeBuiltins()
+        builtins = _FakeBuiltins()
 
 try:
-    from ctypes import pythonapi, py_object
+    from ctypes import py_object as _py_object
+    from ctypes import pythonapi as _pythonapi
     # pylint: disable=invalid-name
-    PyCallable_Check = pythonapi.PyCallable_Check
+    _PyCallable_Check = _pythonapi.PyCallable_Check
 except (ImportError, AttributeError):
     pass
 else:
@@ -54,13 +55,13 @@ else:
         Note that classes are callable, as are instances of classes with a
         __call__() method.
         """
-        return bool(PyCallable_Check(py_object(obj)))
+        return bool(_PyCallable_Check(_py_object(obj)))
     if not hasattr(builtins, 'callable'):
         builtins.callable = ctypes_callable
 
 
 __all__ = ()
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 
 try:
