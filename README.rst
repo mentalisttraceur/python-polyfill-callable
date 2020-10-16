@@ -53,8 +53,7 @@ gracefully handle the lack of ``callable``:
 Limitations
 -----------
 
-As of this writing on 2018-02-17, this module only has a ``callable``
-polyfill for:
+Currently, this module only has a ``callable`` polyfill for:
 
 * The early CPython 3 versions that shipped without ``callable`` before
   it was added back in in CPython 3.2. There we can reimplement it
