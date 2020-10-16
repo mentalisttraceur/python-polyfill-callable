@@ -48,8 +48,9 @@ try:
     # pylint: disable=invalid-name
     _PyCallable_Check = _pythonapi.PyCallable_Check
 except (ImportError, AttributeError):
-    pass
-else:
+    _PyCallable_Check = None # pylint: disable=invalid-name
+
+if _PyCallable_Check is not None:
     def ctypes_callable(obj):
         """Return whether the object is callable (i.e., some kind of function).
 
