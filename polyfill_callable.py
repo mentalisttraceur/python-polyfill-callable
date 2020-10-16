@@ -15,14 +15,14 @@
 """Attempts to ensure the ``callable`` builtin is available.
 
 If your Python runtime has a ``callable`` builtin natively (almost
-all implementation of Python do), importing this basically does nothing.
+all implementation of Python do), importing this does nothing.
 
-If your Python runtime has no ``callable`` builtin, on import this will
-attempt to inject an equivalent implementation, so that code invoking
-``callable`` continues to work.
+If your Python runtime has no ``callable`` builtin, on import this
+will attempt to inject an equivalent implementation, so that code
+invoking ``callable`` continues to work.
 
-If your Python runtime has no ``callable`` builtin and this code is
-unable to polyfill it, it will raise a ``NotImplementedError``.
+If your Python runtime has no ``callable`` builtin and this code
+is unable to polyfill it, it will raise a ``NotImplementedError``.
 """
 
 
