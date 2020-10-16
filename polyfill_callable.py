@@ -66,8 +66,8 @@ __version__ = '1.0.1'
 
 try:
     # Calling `callable` on itself is the most compact sanity check.
-    # It also handles implementations that define `callable`, but have
-    # it raise `NotImplementedError` when called.
+    # It also handles implementations that define `callable` but
+    # have it raise `NotImplementedError` when called.
     if not callable(callable):
         raise NotImplementedError('"callable" returns wrong result')
 except NameError:
